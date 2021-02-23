@@ -35,6 +35,8 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
     //セルが選択(タップ)された時
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         textFieldTouchReturnKey = false
+        //セル選択後　灰色から白色に自然に変更
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     //セルの高さ
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -70,7 +72,7 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
             MemoTableView.reloadData()
 
         }
-          return true
+        return true
     }
 
     //画面タッチ判定
